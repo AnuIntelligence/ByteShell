@@ -22,3 +22,4 @@ gcc custom_cli.c -o custom_cli
 ./custom_cli
 ```
 # Incomplete:Completing Soon
+will be trying to add more features like `ls` `ctrl-c`
