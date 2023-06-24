@@ -1,0 +1,17 @@
+Command Input: User enters a command.
+
+History: If the length of the command is non-null (i.e., it is not empty), it is stored in the command history for future reference.
+
+Parsing: The entered command is parsed to break it into individual words and strings. This process involves separating the command into its constituent parts, such as the command itself and its arguments.
+
+Special Character Handling: The parsed command is checked for special characters like pipes (|), redirection symbols (> and <), or background execution (&). These characters indicate specific behaviors for command execution.
+
+Built-in Commands: The parsed command is checked to see if it corresponds to a built-in command. Built-in commands are commands that are directly handled by the command-line interface itself, such as "cd" (change directory), "history" (view command history), or "exit" (terminate the shell).
+
+Pipes Handling: If pipes are present in the command (indicated by the pipe character '|'), the command is split into multiple sub-commands connected by pipes. Each sub-command's output is piped as input to the next sub-command.
+
+Execution: For non-built-in commands, the command is executed by forking a child process. The child process replaces itself with the desired system command or library function using the execvp function. This step involves executing the parsed command and its arguments.
+
+Current Directory: After executing the command, the shell typically prints the current directory's name as a prompt to indicate readiness for the next input.
+
+Next Input: The shell waits for the user to enter the next command and repeats the process from step 1.
