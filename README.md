@@ -15,4 +15,9 @@ This is a custom command-line interface (CLI) implemented in C. It allows users 
 1. Compile the source code:
 
 ```bash
-gcc custom_cli.c -o custom_cli
+gcc custom_cli.c -o custom_cli   
+```
+## Run the executable:  
+```bash
+./custom_cli
+```
