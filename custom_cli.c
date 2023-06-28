@@ -26,7 +26,8 @@ vector<string> builtin_str = {
     "cd",
     "help",
     "exit",
-    "history"
+    "history",
+    "ctrl-c"
 };
 
 int (*builtin_func[])(vector<string>&) = {
