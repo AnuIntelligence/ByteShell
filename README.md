@@ -5,7 +5,7 @@ This is a custom command-line interface (CLI) implemented in C. It allows users 
 
 ## Features
 
-- Supports built-in commands: `cd`, `history`, `help`, `exit`.
+- Supports built-in commands: `cd`, `history`, `help`, `exit`,`ctrl-c`.
 - Executes non-built-in commands using `execvp`.
 - Command history: Keeps track of previously entered commands.
 - Simple and easy to use.
@@ -21,5 +21,3 @@ gcc custom_cli.c -o custom_cli
 ```bash
 ./custom_cli
 ```
-# Incomplete:Completing Soon
-will be trying to add more features like `ls` `ctrl-c`
