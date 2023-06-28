@@ -6,6 +6,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <memory>
+#include <csignal>
 
 using namespace std;
 
@@ -16,6 +17,7 @@ int new_cd(vector<string>& args);
 int new_help(vector<string>& args);
 int new_exit(vector<string>& args);
 int display_history(vector<string>& args);
+void handle_ctrl_c(int signum);
 
 /*
   List of builtin commands, followed by their corresponding functions.
@@ -248,11 +250,19 @@ vector<string> new_split_line(const string& line)
     return tokens;
 }
 
+void handle_ctrl_c(int signum)
+{
+    cout << "Ctrl-C pressed" << endl;
+    exit(EXIT_SUCCESS);
+}
+
 void new_loop()
 {
     string line;
     vector<string> args;
     int status = 1;
+
+    signal(SIGINT, handle_ctrl_c); // Register the signal handler for Ctrl-C
 
     do
     {
